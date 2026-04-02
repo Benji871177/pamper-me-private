@@ -1,0 +1,24 @@
+{
+  "entities": {
+    "Review": {
+      "title": "Review",
+      "description": "A client review for the spa services.",
+      "type": "object",
+      "properties": {
+        "uid": { "type": "string", "description": "The user ID of the reviewer." },
+        "name": { "type": "string", "description": "The display name of the reviewer." },
+        "avatar": { "type": "string", "description": "The avatar URL of the reviewer." },
+        "content": { "type": "string", "description": "The review text." },
+        "rating": { "type": "number", "description": "The rating from 1 to 5." },
+        "createdAt": { "type": "string", "format": "date-time", "description": "When the review was created." }
+      },
+      "required": ["uid", "name", "content", "rating", "createdAt"]
+    }
+  },
+  "firestore": {
+    "/reviews/{reviewId}": {
+      "schema": "Review",
+      "description": "Collection of client reviews."
+    }
+  }
+}

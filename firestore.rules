@@ -1,0 +1,69 @@
+// ===============================================================
+// Assumed Data Model
+// ===============================================================
+//
+// Collection: reviews
+// Document ID: auto-generated
+// Fields:
+//   - uid: string (required) - The user ID of the reviewer.
+//   - name: string (required) - The display name of the reviewer.
+//   - avatar: string (optional) - The avatar URL of the reviewer.
+//   - content: string (required, size < 1000) - The review text.
+//   - rating: number (required, 1-5) - The rating from 1 to 5.
+//   - createdAt: timestamp (required) - When the review was created.
+//
+// ===============================================================
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+    
+    // ===============================================================
+    // Helper Functions
+    // ===============================================================
+    
+    function isAuthenticated() {
+      return request.auth != null;
+    }
+    
+    function isOwner(userId) {
+      return isAuthenticated() && request.auth.uid == userId;
+    }
+    
+    function hasRequiredFields(fields) {
+      return request.resource.data.keys().hasAll(fields);
+    }
+    
+    function hasOnlyAllowedFields(fields) {
+      return request.resource.data.keys().hasOnly(fields);
+    }
+
+    // ===============================================================
+    // Domain Validators
+    // ===============================================================
+    
+    function isValidReview(data) {
+      return hasRequiredFields(['name', 'content', 'rating', 'createdAt']) &&
+             hasOnlyAllowedFields(['uid', 'name', 'avatar', 'content', 'rating', 'createdAt']) &&
+             data.name is string && data.name.size() > 0 && data.name.size() < 100 &&
+             data.content is string && data.content.size() > 0 && data.content.size() < 1000 &&
+             data.rating is number && data.rating >= 1 && data.rating <= 5 &&
+             data.createdAt is timestamp;
+    }
+
+    // ===============================================================
+    // Rules
+    // ===============================================================
+    
+    match /reviews/{reviewId} {
+      // Anyone can read reviews
+      allow read: if true;
+      
+      // Anyone can create a review (unauthenticated allowed)
+      allow create: if isValidReview(request.resource.data);
+      
+      // Reviews are immutable for now
+      allow update: if false;
+      allow delete: if isAuthenticated() && resource.data.uid == request.auth.uid;
+    }
+  }
+}
