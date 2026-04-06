@@ -53,19 +53,19 @@ export default function About() {
             initial={{ opacity: 0, scale: 0.9 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
-            className="relative"
+            className="space-y-6"
           >
-            <div className="rounded-3xl overflow-hidden shadow-2xl">
+            <div className="rounded-3xl overflow-hidden shadow-2xl aspect-[4/5]">
               <img
-                src="https://images.unsplash.com/photo-1515377905703-c4788e51af15?auto=format&fit=crop&q=80&w=800"
-                alt="Spa treatment"
+                src="https://i.postimg.cc/MTBwbSWc/IMG-20260406-WA0027.jpg"
+                alt="Jeovanha Mavungo - Founder"
                 className="w-full h-full object-cover"
                 referrerPolicy="no-referrer"
               />
             </div>
-            <div className="absolute -bottom-8 -right-8 bg-brand-900 text-brand-50 p-8 rounded-2xl shadow-xl hidden md:block">
-              <p className="text-4xl font-serif font-bold">10+</p>
-              <p className="text-sm text-brand-300">Years of Excellence</p>
+            <div className="text-center md:text-left">
+              <p className="text-2xl font-serif font-bold text-brand-900">Jeovanha Mavungo</p>
+              <p className="text-brand-500 italic">Founder & CEO</p>
             </div>
           </motion.div>
         </div>
