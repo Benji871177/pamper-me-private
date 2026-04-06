@@ -52,7 +52,7 @@ export default function Footer() {
             </li>
             <li className="flex items-center gap-3">
               <Mail size={18} />
-              <span>hello@pampermeprivate.com</span>
+              <span>hello@pampermeprivate.co.za</span>
             </li>
             <li className="flex items-center gap-3">
               <MapPin size={18} />

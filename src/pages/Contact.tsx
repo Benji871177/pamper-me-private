@@ -90,7 +90,7 @@ export default function Contact() {
                 </div>
                 <div>
                   <h3 className="font-serif text-xl font-bold">Email Us</h3>
-                  <p className="text-brand-600">hello@pampermeprivate.com</p>
+                  <p className="text-brand-600">hello@pampermeprivate.co.za</p>
                   <p className="text-brand-400 text-sm">General inquiries & partnerships</p>
                 </div>
               </div>
@@ -237,6 +237,10 @@ export default function Contact() {
                     className="w-full px-6 py-4 rounded-2xl bg-brand-50 border border-brand-100 focus:outline-none focus:ring-2 focus:ring-brand-400 transition-all resize-none"
                   ></textarea>
                 </div>
+
+                <p className="text-xs text-brand-500 italic text-center">
+                  * A 30% deposit is required to secure your appointment.
+                </p>
 
                 <button
                   type="submit"

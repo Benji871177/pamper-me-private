@@ -200,7 +200,7 @@ export default function Home() {
                 From head to toe, we offer a comprehensive range of treatments designed to rejuvenate your mind and body.
               </p>
               <p className="text-sm font-medium text-brand-500 italic">
-                * Pricing depends on your selected treatments, location, and group size. Book with our specialist for a custom quote.
+                * A 30% deposit is required to secure your appointment. Pricing depends on treatments, location, and group size.
               </p>
             </div>
             <Link

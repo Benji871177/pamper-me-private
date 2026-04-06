@@ -21,8 +21,8 @@ export default function Services() {
           <p className="text-brand-600 text-lg leading-relaxed">
             Explore our curated selection of premium mobile spa and beauty treatments. Each service is performed by certified professionals using high-quality products.
           </p>
-          <p className="text-brand-500 font-medium italic bg-brand-100/50 py-2 px-4 rounded-full inline-block text-sm">
-            Note: Pricing depends on your selected treatments, location, and group size. Book with our specialist for a custom quote.
+          <p className="text-brand-500 font-medium italic bg-brand-100/50 py-2 px-6 rounded-full inline-block text-sm border border-brand-200">
+            ✨ A 30% deposit is required to secure your appointment.
           </p>
         </div>
 
@@ -53,15 +53,70 @@ export default function Services() {
           </AnimatePresence>
         </div>
 
-        {/* Custom Request Section */}
-        <div className="bg-brand-100 rounded-3xl p-12 text-center space-y-6 mt-20">
-          <h3 className="text-3xl font-serif font-bold">Don't see what you're looking for?</h3>
-          <p className="text-brand-700 max-w-2xl mx-auto">
-            We offer customized packages for groups, events, and special occasions. Contact us to discuss your specific needs.
-          </p>
-          <button className="bg-brand-900 text-brand-50 px-10 py-4 rounded-full font-bold hover:bg-brand-800 transition-all">
-            Inquire About Custom Packages
-          </button>
+        {/* Terms & Conditions Section */}
+        <div className="bg-white border border-brand-100 rounded-3xl p-10 md:p-16 space-y-10 mt-20 shadow-sm">
+          <div className="text-center space-y-4">
+            <h3 className="text-3xl font-serif font-bold">Terms & Conditions</h3>
+            <p className="text-brand-600">Important information regarding your booking</p>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div className="space-y-6">
+              <div className="flex items-start gap-4">
+                <div className="w-10 h-10 bg-brand-50 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                  <span className="text-xl">🤲🏾</span>
+                </div>
+                <div className="space-y-1">
+                  <p className="font-bold text-brand-900">Booking Information</p>
+                  <p className="text-brand-600 text-sm leading-relaxed">
+                    Please contact Gia @ +2769 451 3581 for more information concerning bookings and appointments.
+                  </p>
+                </div>
+              </div>
+
+              <div className="flex items-start gap-4">
+                <div className="w-10 h-10 bg-brand-50 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                  <span className="text-xl">🤲🏾</span>
+                </div>
+                <div className="space-y-1">
+                  <p className="font-bold text-brand-900">Deposit Policy</p>
+                  <p className="text-brand-600 text-sm leading-relaxed">
+                    A 30% deposit is requested to secure your appointment.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div className="space-y-6">
+              <div className="flex items-start gap-4">
+                <div className="w-10 h-10 bg-brand-50 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                  <span className="text-xl">🤲🏾</span>
+                </div>
+                <div className="space-y-1">
+                  <p className="font-bold text-brand-900">Cancellation Policy</p>
+                  <p className="text-brand-600 text-sm leading-relaxed">
+                    Cancellation or Rebooking must be made 48 to 24 hours prior to the appointment date.
+                  </p>
+                </div>
+              </div>
+
+              <div className="flex items-start gap-4">
+                <div className="w-10 h-10 bg-brand-50 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                  <span className="text-xl">🤲🏾</span>
+                </div>
+                <div className="space-y-1">
+                  <p className="font-bold text-brand-900">Other Services</p>
+                  <p className="text-brand-600 text-sm leading-relaxed">
+                    Other services are available, please feel free to inquire.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div className="text-center pt-8 border-t border-brand-50">
+            <p className="text-brand-900 font-serif italic text-lg">Looking forward to being part of your tension release 🫂</p>
+          </div>
         </div>
       </div>
     </div>
