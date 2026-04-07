@@ -8,7 +8,7 @@ export interface Service {
   name: string;
   description: string;
   duration: string;
-  category: 'Facials' | 'Waxing' | 'Massages' | 'Nails';
+  category: 'Waxing' | 'Massages' | 'Nails';
   image: string;
   price: string;
   options?: ServiceOption[];
@@ -57,7 +57,7 @@ export const services: Service[] = [
     description: 'Targeted exfoliation for the back area to remove dead skin cells.',
     duration: '30 Minutes',
     category: 'Massages',
-    image: 'https://images.unsplash.com/photo-1512290923902-8a9f81dc236c?auto=format&fit=crop&q=80&w=800',
+    image: 'https://i.postimg.cc/bwykH7Jw/227085277-603734773930400-8113900530491352957-n.jpg',
     price: 'R500'
   },
   {

@@ -5,7 +5,7 @@ import ServiceCard from '../components/ServiceCard';
 import NailPricing from '../components/NailPricing';
 import { cn } from '../lib/utils';
 
-const categories = ['All', 'Facials', 'Massages', 'Nails', 'Waxing'];
+const categories = ['All', 'Massages', 'Nails', 'Waxing'];
 
 export default function Services() {
   const [activeCategory, setActiveCategory] = useState('All');
