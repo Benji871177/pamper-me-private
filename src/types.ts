@@ -102,7 +102,7 @@ export const services: Service[] = [
     description: 'Relaxing and therapeutic massage focused entirely on the feet.',
     duration: '30 Minutes',
     category: 'Massages',
-    image: 'https://images.unsplash.com/photo-1519014816548-bf5fe059798b?auto=format&fit=crop&q=80&w=800',
+    image: 'https://images.pexels.com/photos/6628806/pexels-photo-6628806.jpeg',
     price: 'R300'
   },
   // Manicures
@@ -112,7 +112,7 @@ export const services: Service[] = [
     description: 'Quick nail shaping and care for those on the go.',
     duration: '30 min',
     category: 'Nails',
-    image: 'https://images.unsplash.com/photo-1604654894610-df49ff66a7cb?auto=format&fit=crop&q=80&w=800',
+    image: 'https://images.pexels.com/photos/3997391/pexels-photo-3997391.jpeg',
     price: 'R350 - R490',
     options: [
       { name: 'Buff & Shine', price: 'R350' },
@@ -127,7 +127,7 @@ export const services: Service[] = [
     description: 'Traditional nail care including cuticle work and shaping.',
     duration: '60 min',
     category: 'Nails',
-    image: 'https://images.unsplash.com/photo-1610992015732-2449b0c26670?auto=format&fit=crop&q=80&w=800',
+    image: 'https://images.pexels.com/photos/3997381/pexels-photo-3997381.jpeg',
     price: 'R410 - R560',
     options: [
       { name: 'Buff & Shine', price: 'R410' },
@@ -142,7 +142,7 @@ export const services: Service[] = [
     description: 'Our premium manicure experience with extended care and luxury finishes.',
     duration: '60 min',
     category: 'Nails',
-    image: 'https://images.unsplash.com/photo-1519014816548-bf5fe059798b?auto=format&fit=crop&q=80&w=800',
+    image: 'https://images.pexels.com/photos/3738377/pexels-photo-3738377.jpeg',
     price: 'R530 - R670',
     options: [
       { name: 'Buff & Shine', price: 'R530' },
@@ -172,7 +172,7 @@ export const services: Service[] = [
     description: 'Essential foot care and nail shaping for a quick refresh.',
     duration: '30 min',
     category: 'Nails',
-    image: 'https://images.unsplash.com/photo-1519014816548-bf5fe059798b?auto=format&fit=crop&q=80&w=800',
+    image: 'https://images.pexels.com/photos/31091768/pexels-photo-31091768.jpeg',
     price: 'R380 - R520',
     options: [
       { name: 'Buff & Shine', price: 'R380' },
@@ -187,7 +187,7 @@ export const services: Service[] = [
     description: 'Complete foot care including exfoliation and nail shaping.',
     duration: '60 min',
     category: 'Nails',
-    image: 'https://images.unsplash.com/photo-1519014816548-bf5fe059798b?auto=format&fit=crop&q=80&w=800',
+    image: 'https://images.pexels.com/photos/34930127/pexels-photo-34930127.jpeg',
     price: 'R440 - R580',
     options: [
       { name: 'Buff & Shine', price: 'R440' },
@@ -202,7 +202,7 @@ export const services: Service[] = [
     description: 'Luxury foot treatment with extended massage and premium finishes.',
     duration: '60 min',
     category: 'Nails',
-    image: 'https://images.unsplash.com/photo-1519014816548-bf5fe059798b?auto=format&fit=crop&q=80&w=800',
+    image: 'https://images.pexels.com/photos/7755549/pexels-photo-7755549.jpeg',
     price: 'R580 - R720',
     options: [
       { name: 'Buff & Shine', price: 'R580' },
@@ -217,7 +217,7 @@ export const services: Service[] = [
     description: 'Advanced foot treatment targeting calluses and dry skin for smooth heels.',
     duration: '60 min',
     category: 'Nails',
-    image: 'https://images.unsplash.com/photo-1519014816548-bf5fe059798b?auto=format&fit=crop&q=80&w=800',
+    image: 'https://images.pexels.com/photos/34930117/pexels-photo-34930117.jpeg',
     price: 'R650 - R790',
     options: [
       { name: 'Buff & Shine', price: 'R650' },
@@ -232,7 +232,7 @@ export const services: Service[] = [
     description: 'Soothing and safe foot care specifically designed for expectant mothers.',
     duration: '60 min',
     category: 'Nails',
-    image: 'https://images.unsplash.com/photo-1512290923902-8a9f81dc236c?auto=format&fit=crop&q=80&w=800',
+    image: 'https://images.pexels.com/photos/5484947/pexels-photo-5484947.png',
     price: 'R540 - R680',
     options: [
       { name: 'Buff & Shine', price: 'R540' },
@@ -247,7 +247,7 @@ export const services: Service[] = [
     description: 'Professional hair removal service for smooth, long-lasting results.',
     duration: 'Varies',
     category: 'Waxing',
-    image: 'https://images.unsplash.com/photo-1596178065887-1198b6148b2b?auto=format&fit=crop&q=80&w=800',
+    image: 'https://images.pexels.com/photos/6629603/pexels-photo-6629603.jpeg',
     price: 'Inquire'
   }
 ];
