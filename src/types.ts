@@ -1,3 +1,8 @@
+export interface ServiceOption {
+  name: string;
+  price: string;
+}
+
 export interface Service {
   id: string;
   name: string;
@@ -6,6 +11,7 @@ export interface Service {
   category: 'Facials' | 'Waxing' | 'Massages' | 'Nails';
   image: string;
   price: string;
+  options?: ServiceOption[];
 }
 
 export const services: Service[] = [
@@ -99,32 +105,141 @@ export const services: Service[] = [
     image: 'https://images.unsplash.com/photo-1519014816548-bf5fe059798b?auto=format&fit=crop&q=80&w=800',
     price: 'R300'
   },
+  // Manicures
   {
-    id: 'facial-1',
-    name: 'Deep Cleansing Facial',
-    description: 'A thorough cleansing, exfoliation, and hydration treatment tailored to your skin type.',
-    duration: '60 min',
-    category: 'Facials',
-    image: 'https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?auto=format&fit=crop&q=80&w=800',
-    price: 'Inquire'
-  },
-  {
-    id: 'mani-pedi-1',
-    name: 'Luxury Manicure',
-    description: 'Complete nail care including shaping, cuticle work, and premium polish.',
-    duration: '45 min',
+    id: 'mani-express',
+    name: 'Express Manicure',
+    description: 'Quick nail shaping and care for those on the go.',
+    duration: '30 min',
     category: 'Nails',
-    image: 'https://images.pexels.com/photos/332046/pexels-photo-332046.jpeg',
-    price: 'Inquire'
+    image: 'https://images.unsplash.com/photo-1604654894610-df49ff66a7cb?auto=format&fit=crop&q=80&w=800',
+    price: 'R350 - R490',
+    options: [
+      { name: 'Buff & Shine', price: 'R350' },
+      { name: 'Polish', price: 'R360' },
+      { name: 'Gel', price: 'R470' },
+      { name: 'French', price: 'R490' }
+    ]
   },
   {
-    id: 'mani-pedi-2',
-    name: 'Deluxe Pedicure',
-    description: 'Relaxing foot soak, exfoliation, and nail care for perfectly groomed feet.',
+    id: 'mani-classic',
+    name: 'Classic Manicure',
+    description: 'Traditional nail care including cuticle work and shaping.',
+    duration: '60 min',
+    category: 'Nails',
+    image: 'https://images.unsplash.com/photo-1610992015732-2449b0c26670?auto=format&fit=crop&q=80&w=800',
+    price: 'R410 - R560',
+    options: [
+      { name: 'Buff & Shine', price: 'R410' },
+      { name: 'Polish', price: 'R420' },
+      { name: 'Gel', price: 'R530' },
+      { name: 'French', price: 'R560' }
+    ]
+  },
+  {
+    id: 'mani-signature',
+    name: 'Signature Manicure',
+    description: 'Our premium manicure experience with extended care and luxury finishes.',
     duration: '60 min',
     category: 'Nails',
     image: 'https://images.unsplash.com/photo-1519014816548-bf5fe059798b?auto=format&fit=crop&q=80&w=800',
-    price: 'Inquire'
+    price: 'R530 - R670',
+    options: [
+      { name: 'Buff & Shine', price: 'R530' },
+      { name: 'Polish', price: 'R540' },
+      { name: 'Gel', price: 'R650' },
+      { name: 'French', price: 'R670' }
+    ]
+  },
+  {
+    id: 'mani-soft-gel',
+    name: 'Soft Gel Tips',
+    description: 'Lightweight and natural-looking nail extensions with a soft gel finish.',
+    duration: '75 min',
+    category: 'Nails',
+    image: 'https://images.unsplash.com/photo-1632345031435-8727f6897d53?auto=format&fit=crop&q=80&w=800',
+    price: 'R440 - R690',
+    options: [
+      { name: 'Polish', price: 'R440' },
+      { name: 'Gel', price: 'R660' },
+      { name: 'French', price: 'R690' }
+    ]
+  },
+  // Pedicures
+  {
+    id: 'pedi-express',
+    name: 'Express Pedicure',
+    description: 'Essential foot care and nail shaping for a quick refresh.',
+    duration: '30 min',
+    category: 'Nails',
+    image: 'https://images.unsplash.com/photo-1519014816548-bf5fe059798b?auto=format&fit=crop&q=80&w=800',
+    price: 'R380 - R520',
+    options: [
+      { name: 'Buff & Shine', price: 'R380' },
+      { name: 'Polish', price: 'R390' },
+      { name: 'Gel', price: 'R500' },
+      { name: 'French', price: 'R520' }
+    ]
+  },
+  {
+    id: 'pedi-classic',
+    name: 'Classic Pedicure',
+    description: 'Complete foot care including exfoliation and nail shaping.',
+    duration: '60 min',
+    category: 'Nails',
+    image: 'https://images.unsplash.com/photo-1519014816548-bf5fe059798b?auto=format&fit=crop&q=80&w=800',
+    price: 'R440 - R580',
+    options: [
+      { name: 'Buff & Shine', price: 'R440' },
+      { name: 'Polish', price: 'R450' },
+      { name: 'Gel', price: 'R560' },
+      { name: 'French', price: 'R580' }
+    ]
+  },
+  {
+    id: 'pedi-signature',
+    name: 'Signature Pedicure',
+    description: 'Luxury foot treatment with extended massage and premium finishes.',
+    duration: '60 min',
+    category: 'Nails',
+    image: 'https://images.unsplash.com/photo-1519014816548-bf5fe059798b?auto=format&fit=crop&q=80&w=800',
+    price: 'R580 - R720',
+    options: [
+      { name: 'Buff & Shine', price: 'R580' },
+      { name: 'Polish', price: 'R590' },
+      { name: 'Gel', price: 'R700' },
+      { name: 'French', price: 'R720' }
+    ]
+  },
+  {
+    id: 'pedi-mediheel',
+    name: 'MediHeel Pedicure',
+    description: 'Advanced foot treatment targeting calluses and dry skin for smooth heels.',
+    duration: '60 min',
+    category: 'Nails',
+    image: 'https://images.unsplash.com/photo-1519014816548-bf5fe059798b?auto=format&fit=crop&q=80&w=800',
+    price: 'R650 - R790',
+    options: [
+      { name: 'Buff & Shine', price: 'R650' },
+      { name: 'Polish', price: 'R660' },
+      { name: 'Gel', price: 'R770' },
+      { name: 'French', price: 'R790' }
+    ]
+  },
+  {
+    id: 'pedi-maternity',
+    name: 'Lucky Legs Maternity Pedicure',
+    description: 'Soothing and safe foot care specifically designed for expectant mothers.',
+    duration: '60 min',
+    category: 'Nails',
+    image: 'https://images.unsplash.com/photo-1512290923902-8a9f81dc236c?auto=format&fit=crop&q=80&w=800',
+    price: 'R540 - R680',
+    options: [
+      { name: 'Buff & Shine', price: 'R540' },
+      { name: 'Polish', price: 'R550' },
+      { name: 'Gel', price: 'R660' },
+      { name: 'French', price: 'R680' }
+    ]
   },
   {
     id: 'waxing-1',

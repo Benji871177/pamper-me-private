@@ -1,6 +1,7 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion } from 'motion/react';
 import { Mail, Phone, MapPin, Send, CheckCircle2, ChevronDown } from 'lucide-react';
+import { useSearchParams } from 'react-router-dom';
 import { services } from '../types';
 
 const areas = [
@@ -23,6 +24,7 @@ const areas = [
 ];
 
 export default function Contact() {
+  const [searchParams] = useSearchParams();
   const [submitted, setSubmitted] = useState(false);
   const [formData, setFormData] = useState({
     fullName: '',
@@ -30,17 +32,38 @@ export default function Contact() {
     phone: '',
     area: '',
     service: '',
+    option: '',
     message: ''
   });
 
+  useEffect(() => {
+    const serviceParam = searchParams.get('service');
+    if (serviceParam) {
+      const decodedService = decodeURIComponent(serviceParam);
+      setFormData(prev => ({ ...prev, service: decodedService }));
+    }
+  }, [searchParams]);
+
+  const selectedServiceData = services.find(s => s.name === formData.service);
+
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
-    setFormData(prev => ({ ...prev, [name]: value }));
+    setFormData(prev => {
+      const newData = { ...prev, [name]: value };
+      // Reset option if service changes
+      if (name === 'service') {
+        newData.option = '';
+      }
+      return newData;
+    });
   };
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     
+    const selectedOption = selectedServiceData?.options?.find(o => o.name === formData.option);
+    const finalPrice = selectedOption ? selectedOption.price : (selectedServiceData?.price || 'Inquire');
+
     // Format WhatsApp message
     const whatsappNumber = "27694513581";
     const text = `*New Booking Request - PMP*%0A%0A` +
@@ -48,7 +71,8 @@ export default function Contact() {
       `*Email:* ${formData.email}%0A` +
       `*Phone:* ${formData.phone}%0A` +
       `*Area:* ${formData.area}%0A` +
-      `*Service:* ${formData.service}%0A` +
+      `*Service:* ${formData.service}${formData.option ? ` (${formData.option})` : ''}%0A` +
+      `*Price:* ${finalPrice}%0A` +
       `*Message:* ${formData.message}`;
     
     const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${text}`;
@@ -225,6 +249,31 @@ export default function Contact() {
                     <ChevronDown className="absolute right-4 top-1/2 -translate-y-1/2 text-brand-400 pointer-events-none" size={20} />
                   </div>
                 </div>
+
+                {selectedServiceData?.options && (
+                  <motion.div 
+                    initial={{ opacity: 0, height: 0 }}
+                    animate={{ opacity: 1, height: 'auto' }}
+                    className="space-y-2"
+                  >
+                    <label className="text-sm font-bold text-brand-900 ml-1">Choose Finish / Type</label>
+                    <div className="relative">
+                      <select 
+                        required
+                        name="option"
+                        value={formData.option}
+                        onChange={handleChange}
+                        className="w-full px-6 py-4 rounded-2xl bg-brand-50 border border-brand-100 focus:outline-none focus:ring-2 focus:ring-brand-400 transition-all appearance-none pr-12"
+                      >
+                        <option value="" disabled>Select an option</option>
+                        {selectedServiceData.options.map(option => (
+                          <option key={option.name} value={option.name}>{option.name} ({option.price})</option>
+                        ))}
+                      </select>
+                      <ChevronDown className="absolute right-4 top-1/2 -translate-y-1/2 text-brand-400 pointer-events-none" size={20} />
+                    </div>
+                  </motion.div>
+                )}
 
                 <div className="space-y-2">
                   <label className="text-sm font-bold text-brand-900 ml-1">Message / Special Requests</label>

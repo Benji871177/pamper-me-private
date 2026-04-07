@@ -49,7 +49,7 @@ const ServiceCard: React.FC<ServiceCardProps> = ({ service, index }) => {
         </div>
         <div className="pt-4 mt-auto">
           <Link
-            to="/contact"
+            to={`/contact?service=${encodeURIComponent(service.name)}`}
             className="w-full inline-flex items-center justify-center gap-2 bg-brand-50 text-brand-900 py-3 rounded-xl text-sm font-bold hover:bg-brand-900 hover:text-brand-50 transition-all group/btn"
           >
             Book with our Specialist

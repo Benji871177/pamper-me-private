@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { services } from '../types';
 import ServiceCard from '../components/ServiceCard';
+import NailPricing from '../components/NailPricing';
 import { cn } from '../lib/utils';
 
 const categories = ['All', 'Facials', 'Massages', 'Nails', 'Waxing'];
@@ -45,12 +46,21 @@ export default function Services() {
         </div>
 
         {/* Services Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          <AnimatePresence mode="popLayout">
-            {filteredServices.map((service, index) => (
-              <ServiceCard key={service.id} service={service} index={index} />
-            ))}
-          </AnimatePresence>
+        <div className="space-y-16">
+          {activeCategory === 'Nails' && (
+            <NailPricing />
+          )}
+          
+          <div className={cn(
+            "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8",
+            activeCategory === 'Nails' && "hidden"
+          )}>
+            <AnimatePresence mode="popLayout">
+              {filteredServices.map((service, index) => (
+                <ServiceCard key={service.id} service={service} index={index} />
+              ))}
+            </AnimatePresence>
+          </div>
         </div>
 
         {/* Terms & Conditions Section */}
